@@ -20,7 +20,7 @@ let handler = async (m, { conn }) => {
     if (!img) throw new Error('No image found');
 
     // Fetch the image and send it to the chat
-    await conn.sendFile(m.chat, img, '', '*𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 © 𝚄𝙻𝚃𝚁𝙰-𝙼𝙳*', m, 0, {
+    await conn.sendFile(m.chat, img, '', '*POWERED BY © CULT*', m, 0, {
       thumbnail: await (await fetch(img)).buffer(),
     });
   } catch (error) {
