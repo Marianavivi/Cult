@@ -1,0 +1,88 @@
+{
+  "name": "CULT MD",
+  "description": "CULT: Your Ultimate WhatsApp COMPANION! Dive into the future of messaging with CULT, an advanced WhatsApp bot engineered by Mariana. Seamlessly blending automation with intelligent features, CULT is your go-to assistant for managing conversations, sending multimedia, and performing smart tasks—all with just a simple command.",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "automation"
+  ],
+  "repository": "https://github.com/Marianavivi/Cult",
+  "stack": "container",
+  "env": {
+    "OWNERS": {
+      "description": "Owner numbers, separate by semicolons.",
+      "required": true,
+      "value": "254732647560"
+    },
+    "BOTNAME": {
+      "description": "The name of your bot.",
+      "required": true,
+      "value": "CULT"
+    },
+    "DATABASE_URL": {
+      "description": "Your MongoDB or other database URL.",
+      "required": false,
+      "value": ""
+    },
+    "MODE": {
+      "description": "Mode of the bot, either public or private.",
+      "required": true,
+      "value": "private"
+    },
+    "PREFIX": {
+      "description": "Command prefix (one symbol only, except @ and +). Leave blank for multiple prefixes.",
+      "required": true,
+      "value": "."
+    },
+    "HKEY": {
+      "description": "Heroku API key, get one from https://dashboard.heroku.com/account",
+      "required": false,
+      "value": ""
+    },
+    "HAPP": {
+      "description": "Heroku app name, same as entered above.",
+      "required": false,
+      "value": ""
+    },
+    "statusview": {
+      "description": "Set to true if you want the bot to view statuses.",
+      "required": false,
+      "value": "true"
+    },
+    "autoRead": {
+      "description": "Set to true if you want the bot to read messages automatically.",
+      "required": false,
+      "value": "false"
+    },
+    "antidelete": {
+      "description": "Set to true if you want the bot to forward deleted messages.",
+      "required": false,
+      "value": "true"
+    },
+    "REMOVEBG_KEY": {
+      "description": "API key for RemoveBg service.",
+      "required": false,
+      "value": ""
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/DuckyTeam/heroku-buildpack-imagemagick.git"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  }
+}
