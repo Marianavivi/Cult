@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  worker:
+    build: .
+    volumes:
+      - .:/code:ro  # Read-only to protect your source code
+      - logvolume01:/var/log
+    depends_on:
+      - redis
+    ports:
+      - "3000:3000"  
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      REMOVEBG_KEY: ${REMOVEBG_KEY}
+      PREFIX: ${PREFIX}
+  redis:
+    image: redis:latest  # Specify the tag for clarity and consistency
+    restart: unless-stopped  # Ensure Redis restarts on failure
+volumes:
+  logvolume01:
+    driver: local  # Specify driver for named volume
