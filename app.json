@@ -22,7 +22,7 @@
     "DATABASE_URL": {
       "description": "Your MongoDB or other database URL.",
       "required": false,
-      "value": ""
+      "value": "iauaztt.mongodb.net/?retryWrites=true&w=majority"
     },
     "MODE": {
       "description": "Mode of the bot, either public or private.",
@@ -62,7 +62,7 @@
     "REMOVEBG_KEY": {
       "description": "API key for RemoveBg service.",
       "required": false,
-      "value": ""
+      "value": "yepeTQaFk7r9ymusihgXYvdN"
     }
   },
   "buildpacks": [
